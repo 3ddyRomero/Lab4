@@ -15,35 +15,48 @@ int*** creatematrix(int n){
    return matriz;
 }
 
-void llenarmatrix(int*** Matrixa, int n){
+void llenarmatrix(int*** Matriz, int n){
+    int globito;
     for(int i=0;i<n;i++){
-         for(int j =0;j<n;j++){
+         for(int j =0;j<3;j++){
 	      for(int k=0;k<n;k++){
-	           Matrixa[i][j][k] = Matrixa[i][j][k] + Matrixa[i][j][k];
+	           
 	      }
          }
     }
 
 }
 
-void imprimirmatriz(int*** Matrixa,int n){
-    for(int i = 0; i <n+1;i++){
-        for(int j=0;j<3;i++){
-	    for(int k=0;k<n+1;i++){
-	        cout<<Matrixa[i][j][k]<<endl;
+void imprimirmatriz(int*** Matriz,int n){
+    for(int i=0; i <n;i++){
+        for(int j=0;j<3;j++){
+	    for(int k=0;k<n;k++){
+	         cout<<Matriz[i][j][k]<<endl;
 	    }
 	}
     }
 } 
 
 
+void Eldos(){
+   int n;
+   int x;
+   int a;
+	cout<<n<<endl;
+   cout<<"Ingrese el grado mas alto del polinomio: "<<endl; 
+   cin>>n;
+   int*** Matriz = creatematrix(n);
+   for(int i=0;i<n+1;i++){
+       cout<<"Ingrese el polinomio X^"<<i<<": ";
+       cin>>x;
+       Matriz[0][0][i]=x;
+       x=0;
+      
+   }imprimirmatriz(Matriz, n);
+}
+
 int menu(){	
     
-    int n=0;
-    int*** Matrixa = creatematrix(n);
-    int x;
-    int a;
-	
     int opcion = 0;
     do{
         cout<<"     MENU"<<endl
@@ -64,13 +77,9 @@ int menu(){
             }
 
             if(opcion == 2){
-              cout<<"Ingrese el grado mas alto del polinomio: "<<endl; cin>>n;
-	      for(int i=0;i<n;i++){
-	           cout<<"Ingrese el polnomio X^"<<i<<": ";cin>>x;
-	      }
-	      
-	      imprimirmatriz(Matrixa, n);           
-
+           
+              Eldos();
+//	      imprimirmatriz(Matriz, n);
 
             }
 
