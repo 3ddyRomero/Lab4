@@ -32,9 +32,9 @@ void imprimirmatriz(int*** Matriz,int n){
         for(int j=0;j<3;j++){
 	    for(int k=0;k<n;k++){
 	         cout<<Matriz[i][j][k]<<endl;
-	    }
-	}
-    }
+	    }cout<<n;
+	}cout<<n;
+    }cout<<n;
 } 
 
 
